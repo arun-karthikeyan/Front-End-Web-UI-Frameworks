@@ -73,3 +73,18 @@ body{
 .affix{
   top: 100px;
 }
+
+.carousel{
+  background: #1A237E;
+}
+
+.carousel .item{
+  height: 300px;
+}
+
+.item img{
+  /*position: absolute;*/
+  top: 0px;
+  left: 0px;
+  min-height: 300px;
+}
