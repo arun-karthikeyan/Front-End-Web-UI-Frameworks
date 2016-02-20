@@ -6,10 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ristorante Con Fusion</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
+
+  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap-social.css" rel="stylesheet">
+
   <link href="css/mystyles.css" rel="stylesheet">
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -52,8 +54,11 @@
 
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-          </li>
+
+          <!-- Task 1 and 2 -->
+            <li><a id="navbar-login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <!-- Task 1 and 2 -->
+
         </ul>
       </div>
     </div>
@@ -162,7 +167,12 @@
         </div>
         <div class="col-xs-12 col-sm-2">
           <p style="padding: 40px;"></p>
-          <button type="button" data-toggle="modal" data-target="#reserveTableModal" class="btn btn-block btn-warning">Reserve Table</button>
+
+          <!-- Task 1 and 3 -->
+            <button type="button" id="jumbotron-reserve-table" class="btn btn-block btn-warning">Reserve Table</button>
+          <!-- Task 1 and 3 -->
+
+
         </div>
       </div>
     </div>
@@ -336,19 +346,44 @@
       </div>
     </div>
   </footer>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script>
-  //Goes inside the document ready function because, it is handled when the document is ready to accept any javascript changes
+  //the javascrit code goes inside the document ready function because, it is handled when the document is ready to accept any javascript changes
+
   $(document).ready(function(){
     $('#myCarousel').carousel({interval: 2000});
+
     $('#carousel-pause').click(function(){
       $('#myCarousel').carousel('pause');
     });
+
     $('#carousel-play').click(function(){
       $('#myCarousel').carousel('cycle');
     });
+
+    //focusing the first element of the corresponding modals when they load
+    $('#loginModal').on('shown.bs.modal', function(){
+      $('#emailid').focus();
+    });
+
+    $('#reserveTableModal').on('shown.bs.modal', function(){
+      $('#guestscount_1').focus();
+    });
+
+    //Adding functions to help trigger the modal - Task 2 and 3
+
+    $('#jumbotron-reserve-table').click(function(){
+        $('#reserveTableModal').modal('toggle');
+    });
+
+    $('#navbar-login').click(function(){
+        $('#loginModal').modal('toggle');
+    });
   });
+
+
+
 
   </script>
 </body>

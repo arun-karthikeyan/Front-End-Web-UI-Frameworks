@@ -1,0 +1,27 @@
+{
+  "name": "conFusion",
+  "homepage": "https://github.com/the3drevolution/Front-End-Web-UI-Frameworks",
+  "authors": [
+    "Arun Karthikeyan <the3drevolution@gmail.com>"
+  ],
+  "description": "Week 4 - Front-End Web UI Frameworks",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "conFusion",
+    "Fusion",
+    "Restaurant"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.5.0"
+  }
+}
